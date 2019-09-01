@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bugless_Noshipping>
+            <version>0.1.0</version>
+        </Bugless_Noshipping>
+    </modules>
+    <global>
+        <helpers>
+            <noshipping>
+                <class>Bugless_Noshipping_Helper</class>
+            </noshipping>
+        </helpers>
+        <blocks>
+            <noshipping>
+                <class>Bugless_Noshipping_Block</class>
+            </noshipping>
+        </blocks>
+        <models>
+            <bugless_noshipping>
+                <class>Bugless_Noshipping_Model</class>
+            </bugless_noshipping>
+            <noshipping>
+                <class>Bugless_Noshipping_Model</class>
+                <resourceModel>noshipping_mysql4</resourceModel>
+            </noshipping>
+            <noshipping_mysql4>
+                <class>Bugless_Noshipping_Model_Mysql4</class>
+                <entities>
+                    <noshipping>
+                        <table>noshipping</table>
+                    </noshipping>
+                </entities>
+            </noshipping_mysql4>
+        </models>
+        <resources>
+            <noshipping_setup>
+                <setup>
+                    <module>Bugless_Noshipping</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </noshipping_setup>
+            <noshipping_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </noshipping_write>
+            <noshipping_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </noshipping_read>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <noshipping>
+                <use>admin</use>
+                <args>
+                    <module>Bugless_Noshipping</module>
+                    <frontName>noshipping</frontName>
+                </args>
+            </noshipping>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <noshipping module="noshipping">
+                <title>Noshipping</title>
+                <sort_order>100</sort_order>
+                <children>
+                    <noshipping module="noshipping">
+                        <title>Manage Noshipping</title>
+                        <sort_order>0</sort_order>
+                        <action>noshipping/adminhtml_noshipping</action>
+                    </noshipping>
+                </children>
+            </noshipping>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <noshipping translate="title" module="noshipping">
+                            <title>Noshipping</title>
+                            <sort_order>1000</sort_order>
+                            <children>
+                                <noshippingbackend translate="title">
+                                    <title>Backend Page Title</title>
+                                </noshippingbackend>
+                                <noshipping translate="title">
+                                    <title>Manage Noshipping</title>
+                                    <sort_order>0</sort_order>
+                                </noshipping>
+                            </children>
+                        </noshipping>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <noshipping>
+                    <file>noshipping.xml</file>
+                </noshipping>
+            </updates>
+        </layout>
+    </adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <noshipping>
+                    <file>noshipping.xml</file>
+                </noshipping>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <carriers>
+            <bugless_noshipping>
+                <active>1</active>
+                <sallowspecific>1</sallowspecific>
+                <model>bugless_noshipping/shipping</model>
+                <name>Shipping Method - Noshipping</name>
+                <price>0.00</price>
+                <title>grab at point</title>
+            </bugless_noshipping>
+        </carriers>
+    </default>
+</config> 

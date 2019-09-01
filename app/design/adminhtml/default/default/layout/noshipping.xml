@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <noshipping_adminhtml_noshippingbackend_index>
+	<reference name="content">
+	  <block type="noshipping/adminhtml_noshippingbackend" name="noshippingbackend" template="noshipping/noshippingbackend.phtml"/>
+	</reference>
+  </noshipping_adminhtml_noshippingbackend_index>
+  <noshipping_adminhtml_noshipping_index>
+	<reference name="content">
+	  <block type="noshipping/adminhtml_noshipping" name="noshipping" />
+	</reference>
+  </noshipping_adminhtml_noshipping_index>
+</layout>
