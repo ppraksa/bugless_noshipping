@@ -1,3 +1,5 @@
+DEPRECATED
+
 1. Add any collect points like you do<br />
 <a href="https://ibb.co/rcTWkTk"><img src="https://i.ibb.co/pRGm2G2/1.png" alt="1" border="0"></a>
 2. Call and manage your method<br />
